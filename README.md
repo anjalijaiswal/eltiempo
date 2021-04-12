@@ -8,17 +8,17 @@ I’ve obtained an app ID and set it as default. If you want to use your's set i
 
 You can set it in your ENV by running:
     
-    ```ruby
-    $ ENV['ELTIEMPO_APP_ID'] = 'your affiliate_id'
-    ```
+   ```ruby
+   $ ENV['ELTIEMPO_APP_ID'] = 'your affiliate_id'
+   ```
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'eltiempo'
-```
+ ```ruby
+ gem 'eltiempo'
+ ```
 
 And then execute:
     
@@ -28,12 +28,13 @@ And then execute:
     
 Or install it yourself as:
    
-   ```ruby
+    ```ruby
     $ gem install eltiempo
     ```
     
 
 For running in local, clone the project
+ 
   ```ruby
   $ git clone git@github.com:anjalijaiswal/eltiempo.git
   $ cd eltiempo
