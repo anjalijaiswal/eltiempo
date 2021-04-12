@@ -20,9 +20,28 @@ Or install it yourself as:
 
     $ gem install eltiempo
 
+For running in local, clone the project
+
+  $ git clone git@github.com:anjalijaiswal/eltiempo.git
+  $ cd eltiempo
+  $ bundle exec rake install
+
+For this gem I used Tiempo API. If you want to use your own app id, you need to register here[https://www.tiempo.com/] to get an app ID(affiliate_id).
+
+I’ve obtained an app ID and set it as default. If you want to use your's set it as environment variable ELTIEMPO_APP_ID.
+
+You can set it in your ENV by running:
+    $ ENV['ELTIEMPO_APP_ID'] = 'your affiliate_id'
+
 ## Usage
 
-TODO: Write usage instructions here
+NOTE: If city passed is not valid, or city_url is not valid, it will calculate the Barcelona municipality by default.
+
+If you are running gem as a CLI, its exposing three functions, today, av_max, av_min, also it expect one of the cities of Barcelona as argument:
+
+  $ eltiempo -today "Gavà"
+  $ eltiempo -av_max "Gavà"
+  $ eltiempo -av_min "Gavà"
 
 ## Development
 

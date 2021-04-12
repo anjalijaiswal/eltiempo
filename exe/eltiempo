@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require "eltiempo"
+require 'optparse'
+
+begin
+  OptionParser.new do |parser|
+    parser.banner = 'Usage: eltiempo command argument'
+    parser.on("-t CITY", "--today CITY", String, "Provide todays weather forecast for the given city") do |city|
+      tiempo_api = Eltiempo::TiempoApi.new(city)
+      weather = tiempo_api.weather_today
+      puts "Weather today(#{weather[:date]}) is #{weather[:description]}, the minimum temp is #{weather[:min_temp]} & maximum temp is #{weather[:max_temp]}."
+    end
+
+    parser.on("-m CITY", "--av_max CITY", String, "Provide weekly average max temperature weather forecast for the given city") do |city|
+      tiempo_api = Eltiempo::TiempoApi.new(city)
+      puts "Average Maximum temperature for city #{city} during week is #{tiempo_api.weekly_max_temp}."
+    end
+
+    parser.on("-i CITY", "--av_min CITY", String, "Provide weekly average min temperature weather forecast for the given city") do |city|
+      tiempo_api = Eltiempo::TiempoApi.new(city)
+      puts "Average Minimum temperature for city #{city} during week is #{tiempo_api.weekly_max_temp}."
+    end
+
+    parser.on('-h', '--help', 'Show this message') do
+      puts parser
+      exit
+    end
+  end.parse!
+rescue OptionParser::MissingArgument, OptionParser::InvalidArgument
+  raise OptionParser::ParseError.new "Provide a city as argument"
+end
