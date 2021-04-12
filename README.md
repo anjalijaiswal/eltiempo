@@ -16,22 +16,15 @@ You can set it in your ENV by running:
 
 Add this line to your application's Gemfile:
 
- ```ruby
- gem 'eltiempo'
- ```
+ `gem 'eltiempo'`
 
 And then execute:
     
-    ```ruby
-    $ bundle install
-    ```
+   `$ bundle install`
     
 Or install it yourself as:
    
-    ```ruby
-    $ gem install eltiempo
-    ```
-    
+   `$ gem install eltiempo`
 
 For running in local, clone the project
  
